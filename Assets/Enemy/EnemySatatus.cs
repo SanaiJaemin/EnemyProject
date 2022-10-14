@@ -27,6 +27,7 @@ public class EnemySatatus : Enemybase
 
     void Awake()
     {
+         
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
         _navMeshAgent = GetComponent<NavMeshAgent>();

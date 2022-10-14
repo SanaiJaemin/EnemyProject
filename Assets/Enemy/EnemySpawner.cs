@@ -14,8 +14,7 @@ public class EnemySpawner : MonoBehaviour
         Shot,
         Special,
     }
-    [SerializeField]
-    private List<MinionData> m_MinionData;
+    
     [SerializeField]
     GameObject EnemyPrefabs; // ±Ÿ¡¢
     [SerializeField]

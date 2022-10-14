@@ -16,6 +16,9 @@ public class PlayerInput : MonoBehaviour
 
     private float monsterDamage = 1f;
 
+    public bool QskillOn = false;
+    
+
     MeshRenderer _meshRenderer;
     private void Awake()
     {
@@ -28,19 +31,20 @@ public class PlayerInput : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
         //Die();
+        qSkill();
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("PistonEnemy"))
-         {
-            _meshRenderer.material.color = Color.red;
-            Debug.Log("그만때려"); 
-            HP -= monsterDamage;
-            StartCoroutine(changecolor());
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.CompareTag("PistonEnemy"))
+    //     {
+    //        _meshRenderer.material.color = Color.red;
+    //        Debug.Log("그만때려"); 
+    //        HP -= monsterDamage;
+    //        StartCoroutine(changecolor());
+    //    }
+    //}
 
     void Die()
     {
@@ -67,5 +71,14 @@ public class PlayerInput : MonoBehaviour
         
         }
         yield return null;
+    }
+
+    void qSkill()
+    {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            QskillOn = true;
+            Debug.Log("키입력이 되나요?");
+        }
     }
 }
